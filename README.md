@@ -7,16 +7,11 @@ Free templates will be used.
 
 ## Template License
 
-==================================================================================================
-
 CEEVEE is a clean, modern, fully responsive site template for your
 resume and portfolio. With this template, you can easily introduce
 yourself and showcase your works to future clients and employers. Also,
 it is flexible and easy to customize so you can even use this template as a 
 creative, business or portfolio site for your company.
-
-==================================================================================================
-
 
 LICENSE:
 
@@ -46,7 +41,7 @@ Attribution:
    free to move it somewhere else.
 
 
------------------------------------------------------------------------------------------------------
+------------------------------------------------------
 
 
 REMOVING THE LINK:
@@ -62,7 +57,7 @@ If possible, kindly send us the site's url where the template is being used.
 Also, keep your Paypal receipt as proof of payment and your good to go.
 
 
------------------------------------------------------------------------------------------------------- 
+------------------------------------------------------
 
 
 SUPPORT:
@@ -83,7 +78,7 @@ jQuery in your skill-set, you can also check out these tutorials:
  - http://code.tutsplus.com/articles/jquery-for-absolute-beginners-video-series--net-2134
 
 
------------------------------------------------------------------------------------------------------- 
+------------------------------------------------------
 
 
 GET THE LATEST VERSION:
@@ -93,7 +88,7 @@ always download the template files directly at our website(http://www.styleshout
 
 
 
--------------------------------------------------------------------------------------------------------
+------------------------------------------------------
 
 
 SOURCES AND CREDITS:
@@ -122,7 +117,7 @@ Javascript Files:
  - jQuery Waypoints (http://imakewebthings.com/jquery-waypoints/)
 
 
---------------------------------------------------------------------------------------------------------- 
+------------------------------------------------------
 
 
 Thanks for downloading from Styleshout :)
