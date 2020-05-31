@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gram Calc</title>
+  </head>
+  <body>
+    <input id="x" type="number" min="0" />cm<br />
+    <input id="y" type="number" min="0" />cm<br />
+    <input id="z" type="number" min="0" />cm<br />
+    <input id="p" type="number" min="0" max="100" />%<br />
+    <input id="ans" type="number" min="0" readonly />kg<br />
+
+    <script>
+      const xDom = document.getElementById("x");
+      const yDom = document.getElementById("y");
+      const zDom = document.getElementById("z");
+      const pDom = document.getElementById("p");
+      const ansDom = document.getElementById("ans");
+
+      const calc = (x, y, z, p) => (x * y * z * (100 - p) * 11) / 1000000;
+
+      const getResult = () => {
+        ansDom.value = calc(xDom.value, yDom.value, zDom.value, pDom.value);
+      };
+
+      xDom.addEventListener("input", () => {
+        getResult();
+      });
+
+      yDom.addEventListener("input", () => {
+        getResult();
+      });
+
+      zDom.addEventListener("input", () => {
+        getResult();
+      });
+
+      pDom.addEventListener("input", () => {
+        getResult();
+      });
+    </script>
+  </body>
+</html>
