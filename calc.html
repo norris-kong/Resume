@@ -3,26 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Gram Calc</title>
+
+    <style>
+      div.a {
+        font-size: 15px;
+      }
+
+      div.b {
+        font-size: large;
+      }
+
+      div.c {
+        font-size: 100%;
+      }
+
+      .row {
+        display: block;
+      }
+    </style>
   </head>
+
   <body>
-    <input id="x" type="number" min="0" />cm<br />
-    <input id="y" type="number" min="0" />cm<br />
-    <input id="z" type="number" min="0" />cm<br />
-    <input id="p" type="number" min="0" max="100" />%<br />
-    <input id="ans" type="number" min="0" readonly />kg<br />
+    <h1>環氧樹脂用量計算器</h1>
+    <div class="a">(此計算器以長方體模具作為計算基礎)</div>
+    <br />
+
+    <div class="c">
+      <div class="row">
+        <label for="x">長度：</label>
+        <input id="x" name="x" type="number" min="0" /> cm
+      </div>
+
+      <div class="row">
+        <label for="y">寬度：</label>
+        <input id="y" name="y" type="number" min="0" /> cm
+      </div>
+
+      <div class="row">
+        <label for="z">厚度：</label>
+        <input id="z" type="number" min="0" /> cm
+      </div>
+
+      <div class="row">
+        <label for="p">填充物比例：</label>
+        <input id="p" type="number" min="0" max="100" /> %<br />
+      </div>
+
+      <div class="row"><input id="ans1" type="number" readonly /> kg<br /></div>
+
+      <div class="row">
+        <input id="ans2" type="number" readonly /> g<br /><br />
+      </div>
+
+      Ａ膠比例 (3:1)：<input id="ans3" type="number" readonly /> g<br />
+      Ｂ膠比例 (3:1)：<input id="ans4" type="number" readonly /> g<br /><br />
+      Ａ膠比例 (2:1)：<input id="ans5" type="number" readonly /> g<br />
+      Ｂ膠比例 (2:1)：<input id="ans6" type="number" readonly /> g<br /><br />
+      Ａ膠比例 (1:1)：<input id="ans7" type="number" readonly /> g<br />
+      Ｂ膠比例 (1:1)：<input id="ans8" type="number" readonly /> g<br /><br />
+    </div>
 
     <script>
       const xDom = document.getElementById("x");
       const yDom = document.getElementById("y");
       const zDom = document.getElementById("z");
       const pDom = document.getElementById("p");
-      const ansDom = document.getElementById("ans");
+      const ans1Dom = document.getElementById("ans1");
+      const ans2Dom = document.getElementById("ans2");
+      const ans3Dom = document.getElementById("ans3");
+      const ans4Dom = document.getElementById("ans4");
+      const ans5Dom = document.getElementById("ans5");
+      const ans6Dom = document.getElementById("ans6");
+      const ans7Dom = document.getElementById("ans7");
+      const ans8Dom = document.getElementById("ans8");
 
-      const calc = (x, y, z, p) => (x * y * z * (100 - p) * 11) / 1000000;
+      const calcKG = (x, y, z, p) => (x * y * z * (100 - p) * 11) / 1000000;
+      const calcG = (kg) => kg * 1000;
 
       const getResult = () => {
-        ansDom.value = calc(xDom.value, yDom.value, zDom.value, pDom.value);
+        ans1Dom.value = calcKG(
+          xDom.value,
+          yDom.value,
+          zDom.value,
+          pDom.value
+        ).toFixed(2);
+        ans2Dom.value = calcG(ans1Dom.value).toFixed(2);
+        ans3Dom.value = ((ans2Dom.value * 3) / 4).toFixed(2);
+        ans4Dom.value = (ans2Dom.value / 4).toFixed(2);
+        ans5Dom.value = ((ans2Dom.value * 2) / 3).toFixed(2);
+        ans6Dom.value = (ans2Dom.value / 3).toFixed(2);
+        ans7Dom.value = (ans2Dom.value / 2).toFixed(2);
+        ans8Dom.value = (ans2Dom.value / 2).toFixed(2);
       };
 
       xDom.addEventListener("input", () => {
